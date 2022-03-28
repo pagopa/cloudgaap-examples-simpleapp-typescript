@@ -1,0 +1,24 @@
+doctype html
+html
+
+    head
+        title=data.title
+        link(rel='stylesheet', href='https://unpkg.com/mvp.css')
+
+    body
+        h1 Update note:
+        form(action=`${context.basePath}/update/${data.id}` method="POST" class="pure-form")
+            input(
+            type="text"
+            value=`${data.title}`
+            name="title"
+            )
+            br
+            textarea(
+            name="body"
+            )= data.body
+            br
+            input(type="submit")
+            br
+
+        a(href=`${context.basePath}/`) Home

@@ -1,0 +1,16 @@
+
+doctype html
+html
+    head
+        title=data.title
+        link(rel='stylesheet', href='https://unpkg.com/mvp.css')
+
+    body
+        h1=data.title
+        p=data.body
+        br
+        a(href=`${context.basePath}/update/${data.id}`) Update note.
+        br
+        a(href=`${context.basePath}/delete/${data.id}`) Delete note.
+        br
+        a(href=`${context.basePath}/`) Home

@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title Home page
+        link(rel='stylesheet', href='https://unpkg.com/mvp.css')
+
+    body
+        h1 Your notes:
+        if item.length
+        - var n=0;
+        table
+            tr
+                th #
+                th Title
+                th Option
+
+                for data in item
+                    - n++
+                    tr
+                        td= n
+                        td
+                            a(href=`${context.basePath}/read/${data.id}`)=data.title
+                        td
+                            a(href=`${context.basePath}/update/${data.id}`) Update
+                            a(href=`${context.basePath}/delete/${data.id}`) Delete
+    br
+    a(href=`${context.basePath}/create`) Create note
